@@ -1,0 +1,3 @@
+###Pelican
+
+A scheduling application
