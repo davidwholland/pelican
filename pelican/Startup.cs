@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(pelican.Startup))]
-namespace pelican
+[assembly: OwinStartupAttribute(typeof(Pelican.Startup))]
+namespace Pelican
 {
     public partial class Startup
     {
