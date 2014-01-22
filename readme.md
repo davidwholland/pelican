@@ -1,3 +1,3 @@
 ###Pelican
 
-A scheduling application for everyone
+A scheduling application and a work in progress
