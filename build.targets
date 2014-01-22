@@ -1,15 +1,15 @@
 <Project DefaultTargets="Debug"
 		 xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-	<Target Name="Debug">
+	<Target Name="Debug" DependsOnTargets="NugetRestore">
 		<MSBuild Projects="Pelican.sln" Properties="Configuration=Debug" />
 	</Target>
 
-	<Target Name="Release">
+	<Target Name="Release" DependsOnTargets="NugetRestore">
 		<MSBuild Projects="Pelican.sln" Properties="Configuration=Release" />
 	</Target>	
 
-	<Target Name="BeforeBuild">
+	<Target Name="NugetRestore">
 		<Exec Command="nuget restore" />
   	</Target>
 
