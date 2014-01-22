@@ -9,4 +9,8 @@
 		<MSBuild Projects="Pelican.sln" Properties="Configuration=Release" />
 	</Target>	
 
+	<!-- <Target Name="BeforeBuild">
+		<Exec Command="nuget restore" />
+  	</Target> -->
+
 </Project>
