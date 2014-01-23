@@ -3,14 +3,24 @@
 
 	<Target Name="Debug" DependsOnTargets="NugetRestore">
 		<MSBuild Projects="Pelican.sln" Properties="Configuration=Debug" />
+		<CallTarget Targets="Test" />
 	</Target>
 
 	<Target Name="Release" DependsOnTargets="NugetRestore">
 		<MSBuild Projects="Pelican.sln" Properties="Configuration=Release" />
+		<CallTarget Targets="Test" />
 	</Target>	
 
 	<Target Name="NugetRestore">
 		<Exec Command="nuget restore" />
+  	</Target>
+
+  	<UsingTask
+  		AssemblyFile=".\xunit\xunit.runner.msbuild.dll"
+  		TaskName="Xunit.Runner.MSBuild.xunit" />
+
+  	<Target Name="Test">
+  		<xunit Assembly=".\Pelican.Tests\bin\Debug\Pelican.Tests.dll" />
   	</Target>
 
 </Project>
