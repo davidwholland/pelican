@@ -16,11 +16,11 @@
   	</Target>
 
   	<UsingTask
-  		AssemblyFile=".\xunit\xunit.runner.msbuild.dll"
+  		AssemblyFile="$(MSBuildProjectDirectory)\packages\xunit.1.9.2\lib\net20\xunit.runner.msbuild.dll"
   		TaskName="Xunit.Runner.MSBuild.xunit" />
 
   	<Target Name="Test">
-  		<xunit Assembly=".\Pelican.Tests\bin\Debug\Pelican.Tests.dll" />
+  		<xunit Assembly="$(MSBuildProjectDirectory)\Pelican.Tests\bin\Debug\Pelican.Tests.dll" />
   	</Target>
 
 </Project>
