@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace pelican.Models
+namespace Pelican.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
