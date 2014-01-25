@@ -1,0 +1,34 @@
+customer data:
+	- name
+	- phone number
+	- email
+
+owner:
+	- business name
+	- phone number
+	- email
+	- address
+	- contact person
+
+scenario:
+	- owner signs into site
+	- owner sees list of existing customers
+		- owner adds new customer (goto: a)
+		OR
+		- owner selects existing customer (goto: b)
+
+(a) scenario (new customer):
+	- owner is asked to enter customer name, email, phone
+	- owner is asked to enter date and time of appointment
+	- owner optionally can change reminder date/time
+	- owner clicks 'Schedule Reminder'
+	- a screen is displayed with a message e.g. "A reminder was scheduled successfully for..."
+
+(b) scenario (existing customer)
+	- owner is asked to enter date and time of appointment
+	- owner optionally can change reminder date/time
+	- owner clicks 'Schedule Reminder'
+	- a screen is displayed with a message e.g. "A reminder was scheduled successfully for..."
+
+scenario (scheduling service):
+	- system selects all appointments which have reminders that occur before current time
