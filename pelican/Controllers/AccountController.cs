@@ -9,7 +9,7 @@ using Pelican.Models;
 namespace Pelican.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         public AccountController()
             : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
@@ -52,7 +52,7 @@ namespace Pelican.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Invalid username or password.");
+                    ModelState.AddModelError("", Resources.Account.InvalidUsername);
                 }
             }
 
@@ -118,10 +118,10 @@ namespace Pelican.Controllers
         public ActionResult Manage(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
-                : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
-                : message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
-                : message == ManageMessageId.Error ? "An error has occurred."
+                message == ManageMessageId.ChangePasswordSuccess ? Resources.Account.PasswordChanged
+                : message == ManageMessageId.SetPasswordSuccess ? Resources.Account.PasswordSet
+                : message == ManageMessageId.RemoveLoginSuccess ? Resources.Account.ExternalLoginRemoved
+                : message == ManageMessageId.Error ? Resources.Account.Error
                 : "";
             ViewBag.HasLocalPassword = HasPassword();
             ViewBag.ReturnUrl = Url.Action("Manage");
