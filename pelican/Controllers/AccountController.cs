@@ -17,7 +17,7 @@ namespace Pelican.Controllers
 
         public AccountController(UserManager<ApplicationUser> userManager)
         {
-            UserManager = userManager;            
+            UserManager = userManager;           
             //UserManager.UserValidator = new UserValidator<ApplicationUser>(UserManager)
             //{
             //    AllowOnlyAlphanumericUserNames = false
