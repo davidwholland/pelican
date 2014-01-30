@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Pelican.Models;
+using Pelican.Resources;
 
 namespace Pelican.Controllers
 {
