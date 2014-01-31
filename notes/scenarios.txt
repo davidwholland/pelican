@@ -32,3 +32,18 @@ scenario:
 
 scenario (scheduling service):
 	- system selects all appointments which have reminders that occur before current time
+
+
+
+log in
+create contact
+create appointment
+
+Person
+Id
+FirstName
+LastName
+MobilePhone
+Email
+CreatedBy
+CreatedDate
