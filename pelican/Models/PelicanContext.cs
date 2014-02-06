@@ -5,7 +5,6 @@ namespace Pelican.Models
 {
     public class PelicanContext : DbContext
     {
-        public DbSet<Person> Persons { get; set; }
         public DbSet<Organization> Organizations { get; set; }
 
         public PelicanContext()
