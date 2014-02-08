@@ -17,11 +17,11 @@ namespace Pelican.Controllers
 
         public AccountController(UserManager<ApplicationUser> userManager)
         {
-            UserManager = userManager;           
-            //UserManager.UserValidator = new UserValidator<ApplicationUser>(UserManager)
-            //{
-            //    AllowOnlyAlphanumericUserNames = false
-            //};
+            UserManager = userManager;
+            UserManager.UserValidator = new UserValidator<ApplicationUser>(UserManager)
+            {
+                AllowOnlyAlphanumericUserNames = false
+            };
         }
 
         public UserManager<ApplicationUser> UserManager { get; private set; }
@@ -78,7 +78,13 @@ namespace Pelican.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser() { UserName = model.UserName };
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.MobilePhone = model.MobilePhone;
+                user.WorkPhone = model.WorkPhone;
+                
                 var result = await UserManager.CreateAsync(user, model.Password);
+
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);

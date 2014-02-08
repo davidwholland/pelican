@@ -7,7 +7,7 @@ namespace Pelican.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "User Name")]
         public string UserName { get; set; }
     }
 
@@ -48,7 +48,7 @@ namespace Pelican.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "User Name")]
         public string UserName { get; set; }
 
         [Required]
@@ -70,13 +70,11 @@ namespace Pelican.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
-        [Required]        
-        public string Email { get; set; }
-
         [Required]
         [Display(Name = "Mobile Phone")]
         public string MobilePhone { get; set; }
 
+        [Display(Name = "Work Phone")]
         public string WorkPhone { get; set; }
         
 
@@ -86,8 +84,7 @@ namespace Pelican.Models
             {
                 UserName = this.UserName,
                 FirstName = this.FirstName,
-                LastName = this.LastName,
-                Email = this.Email,
+                LastName = this.LastName,                
                 MobilePhone = this.MobilePhone,
                 WorkPhone = this.WorkPhone
             };
@@ -105,8 +102,7 @@ namespace Pelican.Models
         {
             this.UserName = user.UserName;
             this.FirstName = user.FirstName;
-            this.LastName = user.LastName;
-            this.Email = user.Email;
+            this.LastName = user.LastName;            
             this.MobilePhone = user.MobilePhone;
             this.WorkPhone = user.WorkPhone;
         }
@@ -124,12 +120,10 @@ namespace Pelican.Models
         public string LastName { get; set; }
 
         [Required]
-        public string Email { get; set; }
-
-        [Required]
         [Display(Name = "Mobile Phone")]
         public string MobilePhone { get; set; }
 
+        [Display(Name = "Work Phone")]
         public string WorkPhone { get; set; }
     }
 
@@ -145,8 +139,7 @@ namespace Pelican.Models
         {
             this.UserName = user.UserName;
             this.FirstName = user.FirstName;
-            this.LastName = user.LastName;
-            this.Email = user.Email;
+            this.LastName = user.LastName;            
             this.MobilePhone = user.MobilePhone;
             this.WorkPhone = user.WorkPhone;
 
@@ -173,8 +166,7 @@ namespace Pelican.Models
 
         public string UserName { get; set; }
         public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
+        public string LastName { get; set; }        
         public string MobilePhone { get; set; }
         public string WorkPhone { get; set; }
         public List<SelectRoleEditorViewModel> Roles { get; set; }
