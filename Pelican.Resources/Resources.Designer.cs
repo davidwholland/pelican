@@ -70,7 +70,7 @@ namespace Pelican.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Scheduler.
+        ///   Looks up a localized string similar to Pelican.
         /// </summary>
         public static string ApplicationName {
             get {
