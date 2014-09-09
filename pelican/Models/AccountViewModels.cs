@@ -159,7 +159,8 @@ namespace Pelican.Models
             foreach (var userRole in user.Roles)
             {
                 var checkUserRole =
-                    this.Roles.Find(r => r.RoleName == userRole.Role.Name);
+                      this.Roles.Find(r => r.RoleName == userRole.ToString());
+
                 checkUserRole.Selected = true;
             }
         }
